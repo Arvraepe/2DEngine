@@ -13,8 +13,12 @@ function getEngine (root) {
 									width: entity.radius, height: entity.radius, 
 									borderRadius: "50%", backgroundColor: entity.background});
 		} else if (type === "rectangle"){
-			$("#"+entity.id).css({top: entity.y, left: entity.x, width: entity.width, height: entity.height});
+			$("#"+entity.id).css({	top: entity.y, left: entity.x, 
+									width: entity.width, height: entity.height,
+									borderRadius: 0, backgroundColor: entity.background});
 		}
+
+		$("#console").html(JSON.stringify(entities));
 	}
 
 	return {
