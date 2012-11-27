@@ -1,8 +1,45 @@
+
 <html>
 	<head>
+		<style type="text/css">
+			#bounds {
+				position: absolute;
+				width: 800px;
+				height: 600px;
+				top: 50px;
+				left: 50px;
+				border: 1px solid #999;
+				background-color: #FAFAFA;
+			}
 
+			.entity {
+				position: absolute;
+				border: 1px solid #AAA;
+			}
+
+		</style>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="2DEngine.js"></script>
+		<script type="text/javascript">
+			var Engine = getEngine("bounds");
+
+			$(window).load(function () {
+				Engine.click(function (event){
+					var brect = {
+						x : event.pageX - this.offsetLeft - 10,
+						y : event.pageY - this.offsetTop - 10,
+						radius: 20,
+						background: "#FAFA00"
+					}
+					
+					Engine.drawCircle(brect);
+				});
+			});
+		</script>
 	</head>
 	<body>
-
+		<div id="bounds"> 
+			
+		</div>
 	</body>
 </html>
